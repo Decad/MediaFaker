@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .stage {
+        width: 320px;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+        height: calc(100vh - 42px);
+        resize: both;
+        overflow: auto;
+      }
+
+      .hero {
+        background: #666;
+        padding: 30px;
+        text-align: center;
+        color: white;
+      }
+      /* Custom, iPhone Retina */
+      @media only screen and (min-width : 320px) {
+          .hero .h1:after {
+            content: "iPhone"
+          }
+      }
+
+      /* Extra Small Devices, Phones */
+      @media only screen and (min-width : 480px) {
+          .hero .h1:after {
+            content: "Small Phones"
+          }
+      }
+
+      /* Small Devices, Tablets */
+      @media only screen and (min-width : 768px) {
+          .hero .h1:after {
+            content: "Tablets"
+          }
+
+      }
+
+      /* Medium Devices, Desktops */
+      @media only screen and (min-width : 992px) {
+          .hero .h1:after {
+            content: "Medium Devices, Desktops"
+          }
+          body {
+            background: blue;
+          }
+      }
+
+      /* Large Devices, Wide Screens */
+      @media only screen and (min-width : 1200px) {
+          .hero .h1:after {
+            content: "Large Device, Wide screens"
+          }
+      }
+    </style>
+  </head>
+  <body>
+      <div class="stage">
+        <div class="hero">
+          <h1 class="h1"></h1>
+        </div>
+      </div>
+      <script src="../lib/mediafaker.js"></script>
+      <script>
+        var mf = new mediafaker({
+          element: '.stage',
+        })
+      </script>
+  </body>
+</html>
